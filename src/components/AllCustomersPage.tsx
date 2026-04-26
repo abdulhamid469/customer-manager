@@ -108,7 +108,7 @@ export function AllCustomersPage() {
 
   function handleExport() {
     if (customers.length === 0) {
-      toast.error("No customers to export");
+      toast.error("Koi customer nahi hai export karne ke liye");
       return;
     }
     const data = customers.map((c) => ({
@@ -123,10 +123,8 @@ export function AllCustomersPage() {
     const ws = XLSX.utils.json_to_sheet(data);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "Customers");
-
-    // CSV format — Google Sheets mein perfectly khulta hai
-    XLSX.writeFile(wb, `muna-customers-${new Date().toISOString().slice(0, 10)}.csv`);
-    toast.success("File downloaded");
+    XLSX.writeFile(wb, `muna-customers-${new Date().toISOString().slice(0, 10)}.xlsx`);
+    toast.success("Excel file download ho gayi!");
   }
 
   function toggleSelectAll() {
