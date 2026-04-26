@@ -1,0 +1,17 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "tanstack-start-app",
+	"compatibility_date": "2025-09-24",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"main": "@tanstack/react-start/server-entry",
+	"d1_databases": [
+		{
+			"binding": "customers_db",
+			"database_name": "customers-db",
+			"database_id": "0f757221-ebc4-4477-90a7-5b3ed0c67fb4",
+			"remote": true
+		}
+	],
+}
